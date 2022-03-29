@@ -1,0 +1,204 @@
+-->callback, promises, async, await
+->difference between sync(blocking) and async(non-blocking)
+->callback-
+function abc(){
+    console.log("start");
+    setTimeout(()=>{console.log("Event call")},3000);
+    console.log("End");
+}
+abc();
+output:
+start
+end 
+event call
+
+->promises :when we define a promise, it will be resolved when the time comes
+or it will get rejected.
+-> a promise is used to handle the asyncronous operations>
+->state of promises
+->pending: initial state, before the promise succeeds or fails
+->resolve: completed.
+->rejected: failed
+->how we create a promise
+const myPromise=new Promise((resolve,reject)=>{
+    let age=17;
+    if(age>18){
+        setTimeout(()=>{
+            resolve("Eligible")
+        },2000)
+    
+    }else{
+        reject("not eligible")
+    }
+})
+->how we using promise
+To use it we have then() for resolve and catch() for reject.
+myPromise
+.then(res=>{
+    console.log(res)
+})
+.catch(rej=>{
+    console.log(rej)
+})
+->promises chaining:
+eg:
+
+let pro=new Promise((resolve,reject)=>{
+    setTimeout(()=> resolve(20),2000)
+})
+pro.then(res=>{
+    console.log(res);//20
+    return res*2;
+})
+.then(res=>{
+    console.log(res);//40
+    return res*5;
+
+});
+.then(res=>{
+    console.log(res)//200
+})
+
+
+->example of promise chaining is fetch() method
+fetch(): inbuild method of javascript used to call a apis
+and return data in promises.
+eg:
+https://jsonplaceholder.typicode.com/
+eg:
+const URL="https://jsonplaceholder.typicode.com/posts";
+fetch(URL)
+.then(res=> res.json())
+.then(data=>{
+    console.log(data)
+})
+
+->create a webpage
+User Details
+<button>click here </button>
+<ul id="target">
+</ul>
+->when we click on button call the api with fetch method and render
+the all user emails in the ul.
+
+->async | await
+->if we put async keyword before any function so that function return
+promise.
+async function xyz(){
+    return 10;
+}
+xyz().then(res=>console.log(res))
+->await: it makes javascript wait until that promise settles and return its result.
+await is only used with async function.
+eg:
+async function fetchUser(){
+    try{
+
+  
+    const URL="";
+    let response=await fetch(URL);
+    let userData=await response.json();
+      }
+      catch(err){
+          console.log(err);
+      }
+}
+
+->with the help of async , await call the api and render the data in the
+div 
+Name:
+Email:
+Phone no:
+Username:
+website:
+
+
+->typscript: it is a super set of javascript.
+->it builds on top of javascript.first we write the typescript code,
+the it compile the typescript code in plain javascript code(es5) using typscript compiler(tsc).
+=>it is a case sensitive
+->extension .ts
+typscript -----> compiler---->javascript
+->Features of typescript.
+->it is strongly typescript
+->apply object oriented features like classes , inheritance, interfaces etc.
+->Environmental setup
+1)Download and install node js
+2)npm install typescript --g
+->how we run typscript program
+first.ts
+console.log("my typescript file");
+tsc first.ts(compile and generate .js)
+node first.js
+my typescript file
+
+->type annotations:
+let variablename: type;
+->Number
+let age: number=23;
+->string
+let name: string="anju"
+->boolean
+let status:boolean=false;
+->array
+let names:string[]=["a","b","c"];
+->object 
+let person:{
+    name: string;
+    age:number
+}
+->tuple
+let skills:[string,number,string];
+->any typelet formData:any;
+->void: use with function
+function abc():void{
+
+}
+->union
+let uid:(number|string)
+-->Access Modifiers
+public: anywhere
+private:within a class
+protected: within a class and derived class
+-> readonly Modifiers
+readonly dob: Date;
+->Interfaces: it defines the contracts within our code. it is just likea skelaton where we can declare
+the variables and methods not the definition. we can define it where it implements.
+eg:
+interface Person{
+    fname:string;
+    lname:string;
+}
+function getFullName(person:Person){
+    return `${person.fname} ${person.lname}`;
+    
+}
+let sam={
+    fname:"sam"
+    lname: "Gurav"
+
+}
+console.log(getFullName(sam))
+
+->class type
+interface JsonConvert{
+    toJSON(): string;
+}
+class sam implements JsonConvert {
+    constructor(private fname, private lname){
+
+    }
+    toJSON():string{
+        return JSON.stringify(this)
+    }
+}
+let obj=new Person("Samiksha Gurav");
+console.log(obj.toJSON())
+
+
+
+
+
+
+
+
