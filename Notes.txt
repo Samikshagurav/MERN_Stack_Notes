@@ -1,0 +1,176 @@
+-->Express js: it is a web application framework for Node.js . It provides various features that make
+web application development fast and easy.with the help of it we can develop our application very and easily and fastly.
+-->Advantages:
+1) It is javascript development so fast and easy.
+2)Easy to configure and customize.
+3)We work on middlewares so the application work is easy.
+4)It is easy to integrate with different template engines like jade, EJS, Pug etc.
+->Allow us to create REST API server.
+->It is easy to connect with databases like MongoDB , Mysql ,Redis etc
+
+Environmental Setup
+->First we need node js Environment
+->npm init(package.json)
+->npm install express --save
+
+-->How we create web server.
+App.js
+const express=require('express'); //import
+const PORT=8899;// define PORT// 
+const app=express(); //create object of express
+// define the routes
+//define app in the port
+app.listen(PORT,(err)=>{
+    if(err) throw err;
+    console.log(`it's working on ${PORT}`)
+});
+
+
+->configuring routes(routing)
+
+routing refers to determining how an applcaiton responds to a client request to a particular endpoint, which
+is URI (or path ) and a specific HTTP request method
+syntax:
+app.METHOD(PATH,HANDLER)
+app: instance of express
+-->METHOD: http request methods(GET,POST,PUT,DELETE)
+=>PATH: URI
+->HANDLER: function executed when path is match
+eg:
+app.get('/',(req,res)=>{
+    res.send("default")
+})
+app.post('/submit-data',(req,res)=>{
+    res.send('post request');
+
+})
+
+app.put('/update-data',(req,res)=>{
+    res.send('put request');
+    
+})
+app.delete('/delete-data',(req,res)=>{
+    res.send('delete request');
+    
+})
+
+->How we read post data
+app.use(express.json());
+
+req.body 
+->dynamic routes(parameters -params)
+eg:
+http://localhost:8899/category/mobiles/mi
+app.get('/categorydata/:cname/:scat?',(req,res)=>{
+    let cn=req.params.cname;
+    let scn=req.params.scat;
+    if(scn!=undefined){
+        res.send(`The category is ${cn} and subcat is ${scn}`)
+    }
+   else{
+       res.send(`the category is ${cn}`)
+   }
+})
+
+
+
+->express js middleware
+custom 
+inbuld
+3rd party
+
+24-11-2021
+=>express js middleware
+
+->middleware are the functions that execute during the lifecycle of a request to the server.
+->Each middleware has access to the http request and response for each route(path).
+->Types of middleware:
+1)custom middleware
+
+let myData=(req,res,next)=>{
+    req.mytime="Neosoft Technology"
+    next();
+
+
+}
+->To use any middleware we have .use()
+eg:
+app.use(myData())
+
+2)Route Level middleware:
+
+const JSONCheck=function(){
+    return(req,res,next){
+        if(req,headers['type']==='application/json')
+{
+    next()
+}
+else{
+    res.status(201).send('application/json format supported')
+}
+
+
+    }
+}
+
+app.post('/register',JSONCheck(),(req,res)=>{
+
+})
+
+3)inbuild middleware
+->express.static: to serve a static file
+->express.json()
+
+******express.static: this middleware is used to allow static files like images , css ,js file etc.
+
+app.use(express.static('Images'));
+
+
+->express.Router:
+It is a inbuild middleware which is used to create separate route handlers.
+
+routes/adminRoutes.js
+
+const express=require('express');
+const router=express();
+router.get('/',(req,res)=>{
+    res.send("admin front")
+})
+router.get('/dashboard',(req,res)=>{
+    res.send("admin dashboard ")
+})
+module.exports=router;
+
+app.js
+
+
+const frontRoutes=require('./routes/frontRoutes')
+const adminRoutes=require('./routes/adminRoutes')
+app.use('/',frontRoutes)
+app.use("/admin",adminRoutes);
+
+
+3)3rd party middleware(are install with the help of npm install)
+
+cors: cross origin request
+npm install cors --save
+multer: for fileupload
+npm install multer --save
+
+
+
+29-11-2021
+
+->Template Engine:in past if we want to develop any web application in express js we work on template engine part for front-end.
+-> Express js hangle server-side template engines.
+->This allows us to generate HTML dynamically.
+->There are many popular template engines like Pug,EJS,,Mustache, 
+
+
+npm install express pug --save
+
+
+
+
+
+
