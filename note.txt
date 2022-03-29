@@ -1,0 +1,263 @@
+-->prototype:
+with the help of prototype we can add properties and methods later on in the program.
+
+eg:
+
+function Employee(name){
+    this.name=name;
+}
+Employee ------prototype---> constructor--->Employee 
+->Environmental Setup of node Js.
+->Download and install node.Js
+->To check node is install or not
+->open cmd or terminal
+nove -v
+->when node is install npm is also install with it(node package manager)
+npm -v
+->scenario
+Car class
+->speed:50
+->method:
+acc: +60
+checkspeed: display the current speed.
+->module pattern(IIFE: Immediatly involke function Expression)
+(function(){
+    //
+})();
+eg:
+var calc=function(){
+    return{
+        add: function(a,b){
+            return(a+b)
+        },
+        sub:function(a,b){
+            return(a-b)
+        }
+    }    
+}();
+console.log(calc.ad(10,5))
+console.log(calc.ad(10,5))
+
+->hoisting:  it is a internal mechanism in javascript , if we define any
+            variable or functions anywhere in our program it automatically
+            assign to the top of a program before code execution.
+types:
+->variable and function hoisting.
+->closures: Inner function always has access to the variables
+and parameters of the outer function, even after the outer function
+has returned.(Inner function is known as a closure).
+
+ eg:
+    function Outer(){
+        var count=0;
+        console.log(count)
+        function Inner(){
+           count++;
+           return count;
+        }
+        return Inner;
+    }
+    var counter=Outer();
+    console.log(counter());//1
+    console.log(counter());//2
+    console.log(counter());//3
+    console.log(counter());//4
+
+
+Es 6/7: new features are introduced in javascript.
+->let keyword :- we can define the local scope of a variable within a scope.
+es5: 
+function abc(){
+    var a=10;// local variable
+}
+
+->constant: it is a value that never be changed, it is read only.
+const MAIN_URL="abc.com";
+MAIN_URL="abc.com";//not possible
+*** in case of array elements and object properties we can 
+->Template Literals: used to bind the string and variable within the string.
+backtricks symbols(``)
+eg:
+let a=10;
+let b=20;
+let sum=a+b;
+console.log(`The sum of ${a} and ${b} is ${sum}`);
+
+es5:
+console.log("the sum of "+a+" and"+b+" is "+sum);
+->Arrow function: =>, code is sort and concise.
+eg:
+
+let add=(a,b)=>(a+b);
+let add=(a,b)=>{
+    return(a+b);
+}
+
+
+->class and objects
+class Car
+{
+    constructor(){
+        this.speed=50;
+    }
+    acc(){
+        this.speed+=60;
+    }
+    checkspeed(){
+        console.log(`the speed is ${this.speed}`)
+    }
+}
+const obj=new Car;
+obj.checkspeed();
+obj.acc();
+obj.checkspeed();
+
+->Inheritance: resuability, to access the parent class properties in a child class.
+->extends keywords is used for Inheritance.
+eg:
+
+class A{
+    abc(){
+        return "sam";
+    }
+}
+class B extends A{
+    bca(){
+        let fname = "SAkshi";
+        let pname=super.abc();//sam
+        console.log(`${fname} and ${pname} are good friends.`);
+    }
+}
+const obj= new B;
+obj.bca();
+
+
+
+task:
+let
+constarrow 
+template Literals
+class and object 
+Inheritance
+
+
+
+Day 14:
+-> **** Rest parameter and spread operators.
+->Rest parameter: a function can be called with any number of arguments, no matter how it is defined.
+It is defined with (...)
+eg:
+function sum(a,b){
+    return(a+b);
+}
+console.log(sum(2,,3,4,5));//5 sum
+eg:
+function mysum(...args){
+    let sum=0;
+    for(let arg of args){
+        sum+=arg;
+    }
+    return sum;
+
+}
+console.log(mysum(2,3));//5
+console.log(mysum(2,3,4));//9
+console.log(mysum(2,3,4,5));//14
+
+
+->spread operator or syntax:
+it is used to spread or copy the array or object in another array or object.
+eg:
+let arr1=[2,3,,4,5];
+let arr2=[5,6,7,8];
+let merged=[0...arr1,...arr2]; /0 2 3 4 5 5 6 7 8
+
+
+eg:
+let obj={a:1,b:2,c:3}
+let objcopy={...obj,d:4}
+
+->Destructuring:
+it is a special syntax that allow us to destucture or unpack array or objects into a bunch of variables.
+->Array Destructuring
+->object Destructuring
+eg:
+let arr=["sam","gurav"];
+let[fname,lname]=arr;
+console.log(fname);
+console.log(lname);
+2)object Destructuring
+
+eg:
+let obj={fname:"sam",lname:"joshi",city:"mumbai"};
+let {fname,lname,city}=obj;
+
+
+Task:
+let salaries={
+    "anuj":20000,
+    "sunil": 30000,
+    rahul: 25000
+}
+->create topsalary function(salaries)
+tha return the name of the top paid salary person.
+if salary is empty, it return null.
+
+-> modules:  it is just a file where we can put our reusable code.
+->it is just like a library also.
+->Modules can load with export and import keyword to interchange functionalities.
+->map,filter,reduce methods
+->map():map return an array. it give us all the elements of the array which we map and we can return
+the values as per our requirement and return it into array.
+eg: 
+let arr=[2,3,4,5];
+let newArray=arr.map(val=>val*2);// 4 6 8 10
+
+
+->filter
+->reduce: it takes all of the elements in an array and reduces then into a single value.
+eg:
+let arr=[1,2,3,4,5];
+const total=arr.reduce((prev, current)=>{
+    console.lname(prev+"---"+current)
+    return prev+current;
+},0)
+console.lname(total)
+
+->Generator function: we can pause the function in midway and then continue 
+from where it is paused.
+-> it return multiple values.
+eg:
+function abc(){
+    console.log("I ");
+    console.log("cannot ");
+    console.log("pause ");
+}
+abc();
+output:
+I
+cannot
+pause
+->
+function * generate(){
+    console.log("Invoke first");
+    yield 1;
+    console.log("Ïnvoke second");
+    yield 2;
+}
+->* indicate that a function is generator function
+->yield return a value and pause the execution of the function.
+let gen=generate();
+->generator object returns another object with two properties:
+done and value (iterable)
+->we can achieve that object with the help of
+next();
+
+
+->callback,promice,async,await,typescript
+
+
+
+
+
+
