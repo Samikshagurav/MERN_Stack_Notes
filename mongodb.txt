@@ -1,0 +1,161 @@
+--> Mongodb :- It is an open-source , cross-platform ,document oriented database system which is written in C++ programming language.
+  -> It allows several functioning such as insert , select , update , delete , sort , limit etc.
+  -> It is NoSql database (document-oriented) mainly used for high volume data storage.
+  -> performance is fast 
+  ---> table :- collection 
+  ---> document 
+  ---> Installation 
+https://www.mongodb.com/try/download/community 
+---> How we create database 
+   use jasleen (use for create or use database )
+   --> current database name 
+     db 
+   --> List down all databases 
+     show dbs 
+   --> drop database 
+    db.dropDatabase()
+   --> How we create collection (table) 
+   *** Data in MongoDb is stored in form of documents.
+   These documents are stored in Collection and Collection is stored in Database.
+   -> with a single command we can insert a document in the collection and MongoDb creates that collection. 
+      syntex: 
+      db.collectionname.insert({key:value,key:value,...})
+      eg:
+      db.Employee.insert({ename:'anuj',email:'abc@gmail.com',city:'delhi',age:34})
+    *** when we insert data it automatically create _id field ,generate 24 digit unique value.
+    -> show collections (list all collections)
+    -> How we find or select data from collection 
+    db.Collectionname.find() 
+    eg:
+    db.Employee.find()
+    ****->
+      mongod :- used to start the mongodb services 
+      mongo :- for terminal 
+   -> drop collection 
+   db.collectionname.drop()
+   -> query or fetch data 
+   db.Emp.find({name:'anuj'})
+   db.Emp.find({age:{$gt:30}})
+   db.Emp.find({eid:{$ne:101}})
+ -> Update 
+   syntex:
+   db.collectionname.update(criteria,update)
+   eg:
+   db.Emp.update({eid:101},{$set:{name:'sumit',age:31}})
+ -> Delete 
+  db.collectionname.remove(delete_criteria)
+  db.Emp.remove({eid:101})
+  ** all document remove 
+  db.Emp.remove({});
+  -> MongoDb Projection 
+  db.Emp.find({},{age:0})
+  -> limit() and skip() 
+  db.Emp.find({eid:{$gt:105}}).limit(5)
+  db.Emp.find({eid:{$gt:105}}).limit(5).skip(10)
+  -> sort() :- for ascending and descending 
+  db.emp.find({}).sort({salary:1}) //ascending
+  db.emp.find({}).sort({salary:-1}) //descending
+ -> Indexing in mongodb :- 
+   Indexes improves the speed of search operations in database.
+   eg:
+   db.Emp.createIndex({ename:1})
+   find index 
+   db.Emp.getIndexes()
+   -> drop index
+   db.Emp.dropIndex({ename:1})
+     all drop 
+   db.Emp.dropIndexes()
+
+--->Mongoose 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

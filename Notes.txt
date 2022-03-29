@@ -1,0 +1,94 @@
+React / Redux
+
+- [ ] Component life cycle methods
+- [ ] Will you integrate APIs inside componentDidUpdate, explain
+- [ ] What is virtual DOM
+- [ ] Reconciliation algorithm
+- [ ] States and props
+- [ ] Async await 
+- [ ] Fetch or Axios
+- [ ] Props.children
+- [ ] Types of components Dumb components/ pure components / smart components
+- [ ] HOC
+- [ ] Why Redux?
+- [ ] Actions reducers and containers
+- [ ] Will it be a good practice to integrate APIs inside the actions
+- [ ] React router dom
+- [ ] Browserrouter vs hash router
+- [ ] Link / Switch / Route
+- [ ] Refs use of Refs- when to use and when not to?
+- [ ] What are front end libraries you work on ?
+- [ ] How react js is differ with another ?
+- [ ] How create react project setup
+- [ ] what is JSX ? React possible without JSX ?
+- [ ] Virtual DOM / Real Dom
+- [ ] what is state and Props
+- [ ] difference between state and props
+- [ ] Life cycle hooks of react js
+- [ ] API integration in react js
+- [ ] Why Axios? Or Is there any other way to call API
+- [ ] Redux - Flow
+- [ ] components of redux ? How it works
+- [ ] Data passing from parent component to child component
+- [ ] And data passing child component to parent 
+- [ ] And data passing Same level of component
+- [ ] types of component ?
+- [ ] what is stateless and stateful
+- [ ] different types of middleware in react ? which you used ?
+- [ ] Proptypes in react 
+- [ ] How you debug code ?
+- [ ] you write any Test cases ?
+- [ ] what is script - asyc, new feature ? 
+- [ ] what is container component
+- [ ] deployment  ? 
+- [ ] What are issues you faced in your project  and how you resolved them.
+- [ ] read pure javascript(not a jquery)
+- [ ] what is protoype
+- [ ] what are the datatype
+- [ ] object functions
+- [ ] array functions
+- [ ] scope 
+- [ ] hoisting
+- [ ] clouser
+- [ ] es6 related
+- [ ] function programing
+- [ ] currying
+- [ ] nested arrays
+- [ ] search keywords from nested array
+- [ ] object nested object Comparisons
+- [ ] everything related object
+- [ ] advanced css and ccs3  
+- [ ] advanced html and html5
+- [ ] reactjs
+- [ ] jsx
+- [ ] react with redux
+- [ ] HOC
+- [ ] react life cycle
+- [ ] action 
+- [ ] reducer
+- [ ] middleware
+- [ ] router
+- [ ] DOM
+- [ ] V-DOM
+- [ ] Flux Redux
+- [ ] Refs
+- [ ] thunk
+- [ ] Map and Set
+- [ ] settimeout()
+- [ ] setinterval()
+- [ ] Error Boundaries
+- [ ] hooks
+- [ ] Static Type Checking
+
+ES6 & Typescript
+
+- [ ] Let and Var
+- [ ] Let and const
+- [ ] Let supports variable hoisting if no why?
+- [ ] Const example with object
+- [ ] Spread rest operators use with example
+- [ ] Spread is replacement of which javascript method?
+- [ ] Fat arrow functions
+- [ ] Use of this under fat arrow functions with example
+- [ ] De structuring Assignment
+- [ ] Promises & promise.all
