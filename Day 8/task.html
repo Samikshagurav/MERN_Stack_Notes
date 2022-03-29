@@ -1,0 +1,37 @@
+<html>
+    <head>
+
+        <script>
+         var sub1=parseInt(prompt("enter marks of maths out of 100"));
+         var sub2=parseInt(prompt("enter marks of maths out of 100"));
+         var sub3=parseInt(prompt("enter marks of maths out of 100"));
+         var sub4=parseInt(prompt("enter marks of maths out of 100"));
+         var sub5=parseInt(prompt("enter marks of maths out of 100"));
+         console.log(sub1);
+         console.log(sub2);
+         console.log(sub3);
+         console.log(sub4);
+         console.log(sub5);
+         var total=sub1+sub2+sub3+sub4+sub5;
+         var per=(total/500)*100;
+         alert("percentage is:" + per);
+         if(per>80){
+             alert("grade is A");
+
+         }
+         else if(per>60 && per<80){
+             alert("grade is B");
+         }
+         else if(per >45 && per<60){
+             alert("grade is C");
+
+         }
+          else{
+             alert("fail");
+         }
+
+          
+        </script>
+    </head>
+
+</html>

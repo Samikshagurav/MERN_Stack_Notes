@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="images/5.jpg" id="i1" width="200" height="200">
+<script>
+ count=0;
+function change(){
+    var array=["images/1.png","images/2.jpg"]
+    document.getElementById("i1").src=array[count];
+    count++;
+    if(count == 2){
+        count=0
+    }
+}
+    interval=setInterval(change,1000);
+
+</script>
+</body>
+</html>

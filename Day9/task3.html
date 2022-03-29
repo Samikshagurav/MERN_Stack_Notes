@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function datetime(){
+            d=new Date();
+            hour=d.getHours();
+            minute=d.getMinutes();
+            sec=d.getSeconds();
+            var time = hour >= 12 ? 'pm' : 'am';
+                hour = hour % 12;
+                hour = hour ? hour : 12; 
+                minute = minute < 10 ? '0'+minute : minute;
+            document.getElementById("show").innerHTML=hour+" : " +minute+ " :"+sec+ ":" +time;
+        }
+        function calculate(){
+            interval =setInterval(datetime,1000);
+        }
+        function stop(){
+          clearInterval(interval);
+        }
+     
+  </script>
+  <style>
+      #show{
+          width: 200px;
+          height:200px;
+          padding-top: 150px;
+         background-color: honeydew;
+          border: 2px solid black;
+          border-radius: 50%;
+          text-align: center;
+      }
+  </style>
+</head>
+<body >
+  <div id="show"></div>
+
+
+   <button onclick="calculate()">start</button>
+   <button onclick="stop()">stop</button>
+    
+</body>
+</html>

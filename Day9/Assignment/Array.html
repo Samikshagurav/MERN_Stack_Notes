@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html >
+<head>
+   <title>Array Demo</title>
+   
+</head>
+<body>
+    <h2>this is how we access array</h2>
+    <p id="string"></p>
+    <h3>Concat Demo</h3><!--concat 2 array-->
+    <p id="concat"></p>
+        <h3>valueOf()</h3>
+    <p id="value"></p>
+    <h3>slice</h3>
+    <p id="demo"></p>
+    <h3>tostring</h3>
+    <p id="tostring"></p>
+    <script >
+
+        
+// array
+var colorArray= ["green","red","pink","blue"];
+document.getElementById("string").innerHTML= colorArray;
+
+//concat
+var name=["samiksha","diya"];
+var dept=["comps","electrical"];
+var info=name.concat(dept);
+document.getElementById("concat").innerHTML=info;
+
+//valueOf
+var array=["a", "b","c"];
+document.getElementById("value").innerHTML=array.valueOf();
+   //slice
+   var array1 = ["a", "b", "c", "d"];
+array1.splice(3, 0, "e", "f");
+document.getElementById("demo").innerHTML = array1;
+
+//tostring
+var a1 = ["rat", "monkey", "cat", "dog"];
+var a2=a1.toString();
+document.getElementById("tostring").innerHTML=a2;
+
+</script>
+
+
+</body>
+</html>

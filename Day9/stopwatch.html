@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        count=0;
+        function counter(){
+            count++;
+            document.getElementById("timer").innerHTML=count;
+        }
+
+        function start(){
+            interval=setInterval(counter,1000);
+
+        }
+        function stop(){
+            clearInterval(interval);
+        }
+    </script>
+</head>
+<body>
+    <h2>Stop watch</h2>
+    <p id="timer"></p>
+    <button onclick="start()">start</button>
+    <button onclick="stop()">stop</button>
+</body>
+</html>

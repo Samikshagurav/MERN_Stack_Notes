@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+function abc(){
+    var elem=document.getElementById("hh");
+   alert(elem.innerHTML);
+   
+}
+function set(){
+    var per= document.getElementById("hh");
+    per.innerHTML="i am fine, what about you?";
+    per.style.border="2px solid red";
+    per.style.color="red";
+    per.style.backgroundColor="yellow";
+}
+</script>
+
+
+</head>
+<body>
+    <h1>DOM Manupulation</h1>
+    <p id="hh"> hello how are you?</p>
+    <button onclick="abc()">Read here</button>
+    <button onclick="set()"> set Data</button>
+    
+</body>
+</html>

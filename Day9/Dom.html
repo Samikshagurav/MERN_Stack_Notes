@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+
+
+<script>
+function abc(){
+    var elem=document.getElementById("tar");
+    //set data in paragraph
+    elem.innerHTML="<h4>this is innerHTML property</h4>";
+    document.getElementById("im").src="images/2.jpg";
+    elem.style.border="2px solid green";
+    elem.style.textAlign="center";
+    alert(document.getElementById("im").getAttribute('src'));
+}
+</script>
+</head>
+<body>
+    <p id="tar"></p>
+    <img  id="im" src="images/1.png">
+    <button onclick="abc()">Click Here</button>
+</body>
+</html>

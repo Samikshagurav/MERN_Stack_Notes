@@ -1,0 +1,369 @@
+-->Javascript:   it is a client side scripting language used to apply some dynamic contents in our web
+pages like some animations, event handling,
+validations,dom manupulations etc
+->client side language:
+-->Scripting language: interpriting language(line by line)
+-> it is known as ECMAScript (ES) standard
+->old Javascript(Es 5)
+->New features(Es6/Es7..)
+->Javascript (Es 5)
+-> it is a case sensitive language
+-> extension is .Js 
+-> js code is write on script tag
+-> how we implement Javascript in a pages
+home.html
+<!doctype html>
+<html>
+<head>
+<script>
+
+</script>
+
+or 
+<script src="first.js"></script>
+
+
+</head>
+</html>
+-->comments: used to describe the code.
+single: //
+multiple /**/
+html: <!-- -->
+->concatenation: +
+
+--> output | display
+ document.write("hello javascript");
+        console.log("hello console.");
+--> how is javascript exectued?
+the source code javascript is passed through a program called
+a compiler.
+->in every browser there is an javascript comiler.
+-> chrome- v8
+-> mozilla -> spider monkey
+-> IE: chakra.
+
+-> javascript is a programming
+-> variables: temp. memory location which hold input
+data 
+syntax:
+ var varname: value;
+ -> Rules for define varname
+ => start with alphabate[A-Za-z]
+ -> after it combination of[a-zA-z0-9_]
+ eg. 
+ var empName="anuj";
+ var emp_name="anuj";
+ --> Datatypes: type declaration of variables,but in javascript it allocate
+ at run time as per the variables value.
+ -=> types of datatype:
+ 1. string 
+ 2. number
+ 3. bigint: long integer
+ 4. boolean
+ 5. undefined
+ 6. null
+ 7.object
+ ->how we check the datatype of variable 
+ typeof  varname.
+ --> Operators: to perform some operations.
+ -> arthematic operator: +,-,/,*,%,++,--
+ -> assignment: =, +=,*=,/=,%=
+ eg:
+ var sum=0;
+ for(i=1;i<=10;i++){
+     sum+=i;
+ }
+ -> Relational:
+ >,<,>=,<=
+ --> Comparison operator
+ ==:  compares the equalitt of values not the type.
+ eg:
+ var a=10;
+ var b="10";
+ if(a==b)//true
+
+ ===: compares the equality of values and type both 
+ !==
+ !=
+ -> logical operator:
+ 1. &&: when all the conditions are correct.
+ 2. || : when anyone condition is true.
+ !: it reverse the boolean result the operand.
+ eg: 
+ var a=5;
+ var b=10;
+ (a!=b) &&(a<b);// return true
+ (a>b)||(a==b) ;// return false
+
+ (a<b) || (a==b)// return true
+ !(a<b); //return false
+ !(a>b);// return true
+ -> ** ternary operator(conditional operator) (:?)
+ syntax: 
+ <condition>? <value1> :<value2>
+var a=5;
+var b=10;
+var res= a>b ?a :b;//10
+ var res=a>b ?b:a;//5
+ -> conditions | selection(return boolean) 
+ if else
+ if(a>b){
+     //a 
+ }
+ else{
+     //b
+ }
+
+
+ ->if else if else
+ if(condition){
+
+ } else if(condition){}
+
+ --
+ -- 
+ else{}
+
+ -> nested if: if within another if is known as nested if.
+ if all the if conditions are correct then true.
+ eg:
+ if(condition){
+     if(condition){
+         //return true.
+     }
+     else{
+
+     }
+ }
+ else{
+
+ }
+
+->Popup (BOM: browser object model)
+->alert(): to display a dialouge box wit message
+prompt: to imput data at a runtime. but accept the value string,
+if we want to convert string into number.
+-> parseInt()
+-> Number()
+-> confirm():- 
+->switch : multi decision making. performance is fest 
+switch(expression){
+    case v1
+}
+
+=> Task
+-> marksheet
+input 5 subject marks in 5 variables, and find the total, percentage and grade.
+if per>80-
+
+
+task:
+-> input a number:
+reverse it also find the sum of digit of a number
+
+
+-->Array : array is a group of element which is used to 
+store same type of element.
+
+-->funtions: reusablity
+->define
+funtion abc(){
+    //
+}
+Event: to perform some specific Task
+Events event handler
+click
+dblclick
+mouseover
+mouseout
+keyup
+keydown
+blur
+focus
+change
+load 
+reloadz
+
+
+
+Day 9:
+DOM: it is stand for document object model. it is an 
+API for manupulating html documents. modify part of the document.
+Tree representation
+document   
+    html
+        head   
+            title
+                text:dom
+        body
+            p
+                text:hello javascript
+-->selecting elements
+->getElementById(): select an element by getElementById
+->getElementsByName(): select elements by name(array)
+->getElementbyTagName(): array
+-> getElementsByClassName: array
+-->queryselector(): select elements by css selector
+=>manupulating elements:
+->createElement(): create a new element
+->innerHTML: get and set the html content of an element.
+->innerText: get and set the text content of an element.
+->append(): after
+prepend(): before
+->manupulation style
+
+
+task:
+<ul id="menu">
+<li>home</li>
+</ul>
+create lists at runtime
+add list item 
+products
+Gallery 
+
+
+
+->client side validations
+-> regular expressions
+start- /^
+end- $/
+pattern- []
+range: {}
+compulsary: +
+or : |
+eg:
+ var expName: /^[a-zA-z]{2,100}$/;
+ var expMobile=/^[6-9][0-9]{9}$/;
+ var emailReg=/^[a-zA-z0-9-_]+@+$;
+
+ task
+ validations
+ name
+ Mobile 
+ email 
+ submit 
+
+-> Intervals:
+->setInterval(): to call a method or expression regularly as we
+mentioned the time interval.
+eg:
+
+task
+create a banner , image change after 5sec
+
+Object: collection of data in the form of properties and methods
+
+->key value pair 
+-> 1st way(object Literal)
+var obj={
+    fname='sam';
+    lname='singh';
+    fullname:funtion(){
+        return fname+" " +lname;
+    }
+}
+ console.log(obj,fname);
+ console.log(obj,fullname);
+
+-> 2nd way
+ var obj=new Object();
+ obj.fname="sam";
+ obj.lname="g";
+ obj.fullname=funtion(){
+     return this.fname+ "" +this.lname;
+ }
+
+ -->There are predefined method also
+array
+string
+math 
+date: 
+var d=new Date();
+
+d.getHours()
+d.getMinutes()
+d.getSeconds()
+->create a clock in javascript to render the 
+current time in the paragraph.
+
+-->
+wap to change the background color of a paragraph when we click on button?
+
+
+--> task
+todo list
+todo list
+task input field add(button)
+<ul>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

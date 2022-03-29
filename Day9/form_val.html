@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validation(){
+            var name1=document.getElementById("name").value;
+            var phn=document.getElementById("number").value;
+            var mail1=document.getElementById("mail").value;
+            var feedback=document.getElementById("fback").value;
+            var expName=/^[A-Za-z]+$/;
+            var expMobile=/^[6-9][0-9]{9}$/;
+            var emailReg= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            var FedReg= /^[a-z]{1,10}$/
+           if(!(expName.test(name1))){
+            document.getElementById("name").focus();
+               alert("only alphabate");
+           }
+           else if(!(expMobile.test(phn))){
+               document.getElementById("number").focus();
+               alert("only 10 digits allowed")
+            
+           }else if(!(emailReg.test(mail1))){
+            document.getElementById("mail").focus();
+               alert(" email is not valid");
+           }
+           else if(!(FedReg.test(feedback))){
+            document.getElementById("fback").focus();
+               alert(" not valid");
+           }
+           else {
+               alert("form submitted");
+           }
+
+
+        }
+    </script>
+</head>
+<body>
+    <h1>Validation</h1>
+    Name: <input type="text" id="name"><br>
+    Mobile: <input type="text" id="number"><br>
+    Email: <input type="email" id="mail"><br>
+    Feedback: <textarea id="fback"></textarea><br>
+    
+
+    <button onclick="validation()" >Click Here</button>
+
+</body>
+</html>

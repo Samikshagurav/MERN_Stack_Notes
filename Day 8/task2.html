@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            
+    var num1=parseInt(prompt("enter no:"));
+    var rev=0;
+    var sum=0;
+
+      while(num1> 0){
+        rev =rev * 10+num1%10;
+        num1=parseInt(num1/10);
+    }
+    alert("the reverse no is:"+rev);
+     while(rev!=0){
+         sum=sum+rev%10;
+         rev=parseInt(rev/10);
+     }
+     alert("sum is:"+sum);
+
+        </script>
+    </head>
+</html>
