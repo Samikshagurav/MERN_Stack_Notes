@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+ <style>
+     *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+body{
+    background-color: rgb(233, 231, 231);
+}
+.row{
+    background-color: white;
+   border-radius: 30px;
+}
+img{
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.btn1{
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.btn1:hover{
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+}
+
+ </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a href="#" class="navbar-brand">
+            <img src="../Images/logo.jpeg" style="margin-left: 15px;" height="28" alt="CoolBrand">
+        </a>
+        <a class="navbar-brand" id="navbar" href="#">SHOP</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span ></span>
+          <span ></span>
+          <span></span>
+        </button>
+      
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul class="navbar-nav navbar-center ml-auto">
+            <li class="nav-item  active">
+              <a class="nav-link text-info" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">SHOP</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">PICNIC</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">PAGE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">PROMOTIONS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">BLOG</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">CONTACT US</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="register.html">REGISTER</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">LOGIN</a>
+              </li>
+          
+          </ul>
+          <li class="navbar-nav ml-auto p-2">
+            <i class="fa fa-search m-2"></i>
+            <i class="fa fa-shopping-cart m-2"></i>
+            <i class="fas fa-bars m-2"></i>
+          </li>
+        </div>
+      </nav>
+
+    
+      <section class="Form my-3 mx-4">
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="col-lg-5">
+                    <img src="../Images/trav.jpg"  height="650px" width="450px">
+                </div>
+                <div class="col-lg-7 px-5 pt-5">
+                  <img src="../Images/contact.png" class="img-fluid rounded-circle " width="130px" height="130px">
+
+                  <h4>Contact Us</h4>
+                    <form>
+                      <div class="form-row">
+                          <div class="col-lg-7">
+                              <input type="name" placeholder="Enter Name " id="name" onblur="validate()"required class="form-control my-1 p-2"><br>
+                              <span id="err"></span><br>
+                            </div>
+                      </div>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <input type="email" placeholder="Enter Email Address" id="mailid" onblur="validate1()"required class="form-control my-1 p-2"><br>
+                                <span id="err1"></span><br>
+                              </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <textarea style="width: 100%; height: 80px; " id="feedback" placeholder="feedback" onblur="validate2()" required></textarea>
+                                <span id="err2"></span><br>
+                              </div>
+                        </div>
+                   
+                    
+                      <div class="form-row">
+                          <div class="col-lg-7">
+                      <button type="button" onclick="validation()" href="#" class="btn1 mt-3 mb-5">Submit</button><br>
+                              
+                    </div>
+                      </div>
+                          <p>Existing user? <a href="login.html">Login Here</a></p>
+
+                         </form>
+                </div>
+            </div>
+        </div>
+    </section>
+      <script>
+           function validation(){
+             if(validate()&& validate1() && validate2()==true){
+              alert("form sumitted");
+             }
+           
+           }
+
+
+let nameNode=document.getElementById("name");
+let errNode=document.getElementById("err");
+
+function validate(){
+   errNode.innerHTML="";
+    nameNode.style.border="2px green solid";
+    nameNode.style.backgroundColor='yellow';
+    let name=nameNode.value;
+    if(name===""){
+    errNode.innerHTML="<b>this field is required</b>";
+    nameNode.style.border="2px red solid";
+    nameNode.style.backgroundColor='pink'
+    return false;
+}
+else {
+    return true;
+}
+}
+
+let mailNode=document.getElementById("mailid");
+let errNode1=document.getElementById("err1");
+
+function validate1(){
+   errNode1.innerHTML="";
+   mailNode.style.border="2px green solid";
+   mailNode.style.backgroundColor='yellow';
+    let emailId=mailNode.value;
+    let ss=emailId.substring(emailId.indexOf('@')+1); // sam@ is not valid but samiksha@g is valid
+   console.log(ss);
+    if(emailId===""){
+    errNode1.innerHTML="<b>required field</b>";
+    mailNode.style.border="2px red solid";
+    mailNode.style.backgroundColor='pink';
+    return false;
+}
+else if(!emailId.includes("@") || ss===''){
+    errNode1.innerHTML="<b>Invalide Email</b>";
+    mailNode.style.border="2px red solid";
+    mailNode.style.backgroundColor='pink';
+   
+    return false;
+}else{
+    return true;
+    
+
+}
+
+}
+
+
+let fNode=document.getElementById("feedback");
+let errNode2=document.getElementById("err2");
+function validate2(){
+   errNode2.innerHTML="";
+    fNode.style.border="2px green solid";
+    fNode.style.backgroundColor='yellow';
+    let feedback=fNode.value;
+    if(feedback===""){
+    errNode2.innerHTML="<b>this field is required</b>";
+    fNode.style.border="2px red solid";
+    fNode.style.backgroundColor='pink'
+    return false;
+}
+else {
+    return true;
+}
+}
+
+
+
+      </script>
+
+      <footer class="container-fluid text-center text-lg-start bg-light text-muted">
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+          Copyright &copy; 2021 Designed by: Samiksha Gurav   |
+          <a class="text-reset fw-bold" href="https://mdbootstrap.com/">   All Rights Reserved.</a>
+        </div>
+       </footer>
+  
+          
+  
+  
+  
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+  </body>
+  </html>
